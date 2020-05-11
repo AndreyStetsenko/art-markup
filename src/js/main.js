@@ -17,7 +17,7 @@ background.initializr = function (){
   if($("#"+$this.id).lenght > 0){
     $("#"+$this.id).remove();
   }
-  $this.object = $("<div style='z-index:-1;margin:0;padding:0; overflow:hidden;position:absolute;bottom:0' id='"+$this.id+"'> </div>'").appendTo("body");
+  $this.object = $("<div style='z-index:1;margin:0;padding:0; overflow:hidden;position:absolute;bottom:0' id='"+$this.id+"'> </div>'").appendTo(".content--home");
 
   $this.ww = $(window).width()
   $this.wh = $(window).height()
@@ -25,7 +25,7 @@ background.initializr = function (){
   $this.height = $this.object.height($this.wh);
 
 
-  $("body").prepend("<style>.shape_background {transform-origin:center; width:80px; height:80px; background: "+$this.style.bubbles_color+"; position: absolute}</style>");
+  $(".content--home").prepend("<style>.shape_background {transform-origin:center; width:80px; height:80px; background: "+$this.style.bubbles_color+"; position: absolute}</style>");
 
 
   for (i = 0; i < $this.bubbles_number; i++) {
@@ -33,10 +33,6 @@ background.initializr = function (){
   }
 
 }
-
-
-
-
 
  background.generate_bubbles = function() {
    var $this = this;
@@ -59,7 +55,6 @@ background.initializr = function (){
 
   }
 
-
 background.rn = function(from, to, arr) {
 if(arr){
         return Math.random() * (to - from + 1) + from;
@@ -68,3 +63,13 @@ if(arr){
 }
   }
 background.initializr()
+
+var t;
+function up() {
+	var top = Math.max(document.body.scrollTop,document.documentElement.scrollTop);
+	if(top > 0) {
+		window.scrollBy(0,-100);
+		t = setTimeout('up()',20);
+	} else clearTimeout(t);
+	return false;
+}
