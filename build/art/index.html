@@ -1,0 +1,79 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+  	<link rel="stylesheet" href="style.css">
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+  	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script src="main.js"></script>
+</head>
+<body>
+	<div class="open-button-area">
+		<div class="open-button" data-class="modal-background">
+			Рамка
+		</div>
+		<div class="open-button" data-class="modal-background-move">
+			Примерка
+		</div>
+	</div>
+
+	<div class="open-button">
+
+	</div>
+	<input type="hidden" id="pattern-form-id">
+	<div class="modal-background">
+		<div class="modal-block">
+			<div class="modal-close">
+				&times;
+			</div>
+			<div class="modal-left-art-bg">
+				<div class="button-pattern" data-id="1">
+					Рамка #1
+				</div>
+				<div class="button-pattern" data-id="2">
+					Рамка #2
+				</div>
+				<div class="button-pattern" data-id="3">
+					Рамка #3
+				</div>
+				<div class="button-pattern" data-id="4">
+					Рамка #4
+				</div>
+				<div class="button-pattern-ready">
+					Готово
+				</div>
+			</div>
+			<div class="modal-right-art-bg">
+				<img src="img/image.jpg" class="modal-img modal-img-pattern1">
+			</div>
+		</div>
+	</div>
+
+	<div class="modal-background-move">
+		<div class="modal-block-move">
+			<div class="modal-close">
+				&times;
+			</div>
+			<div class="modal-left-art-bg-move">
+				<input type="file" class="input-move-upload">
+				<div class="button-move-upload">
+					Загрузить фон
+				</div>
+				<div class="button-move-ready">
+					Готово
+				</div>
+			</div>
+			<div class="modal-right-art-bg-move">
+				<div class="modal-right-art-bg-area">
+					<div class="modal-img-move">
+						<img src="img/image.jpg">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

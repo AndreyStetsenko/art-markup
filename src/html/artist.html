@@ -1,0 +1,117 @@
+@include('inc/header.html')
+
+@include('inc/tmp/main-menu.html')
+
+<section class="label label--white label__artists">
+   <!-- В кастомных полях добавить положение left/right -->
+  <div class="container">
+    <div class="row row--right">
+      <div class="col-lg-6 col-12">
+
+        <div class="label-text label-text__right artist-single">
+          <h1 class="title-label title-label__artist">Магический портал</h1>
+          <span class="label-span-text label-span-text__buy">
+            Спрей и акрил на холсте<br>50 на 50 сантиметров<br>Сделано в 2020<br>Dek Suave<br>
+          </span>
+          <div class="artist__buyer">
+            <a href="#" class="btn btn-buy" data-toggle="modal" data-target="#tryWall-1">Примерить на стене</a>
+            <a href="#" class="btn btn-buy" data-toggle="modal" data-target="#chooseFrame-1">Выбрать рамку</a>
+
+            <div class="modal fade modal-image-tryWall" id="tryWall-1" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="tryWallLabel-1" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-xl">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="tryWallLabel-1">Примерить картину на стене</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+
+                    <div class="modal-block-move">
+                			<div class="modal-right-art-bg-move">
+                				<div class="modal-right-art-bg-area">
+                					<div class="modal-img-move">
+                						<img src="img/image.jpg">
+                					</div>
+                				</div>
+                			</div>
+                		</div>
+
+                  </div>
+                  <div class="modal-footer">
+
+                    <input type="file" class="input-move-upload">
+
+                    <div id="button-move-upload" class="file-upload__label">
+                      Загрузить фон
+                    </div>
+
+                    <div class="file-upload__label" data-dismiss="modal" aria-label="Close">
+                      Готово
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="modal fade modal-image-chooseFrame" id="chooseFrame-1" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="chooseFrameLabel-1" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-xl">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="chooseFrameLabel-1">Выбрать рамку</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+
+                    <div class="modal-art-bg">
+                      <img src="img/image.jpg" class="modal-img modal-img-pattern1">
+                    </div>
+
+
+
+                  </div>
+                  <div class="modal-footer">
+
+                    <div class="modal-art-ram">
+                      <div class="button-pattern" data-id="1">
+                        Рамка #1
+                      </div>
+                      <div class="button-pattern" data-id="2">
+                        Рамка #2
+                      </div>
+                      <div class="button-pattern" data-id="3">
+                        Рамка #3
+                      </div>
+                      <div class="button-pattern" data-id="4">
+                        Рамка #4
+                      </div>
+                    </div>
+
+                    <div class="button-pattern-ready" data-dismiss="modal" aria-label="Close">
+                      Готово
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+      <div class="col-lg-6 col-12">
+        <div class="img-artist">
+          <img src="https://static.tildacdn.com/lib/unsplash/7d05b9c5-b053-3152-eadd-915efa17c751/photo.jpg" alt="Dek Suave">
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+@include('inc/footer.html')

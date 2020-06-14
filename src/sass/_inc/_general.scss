@@ -1,14 +1,33 @@
 @import "helpers";
 
 html, body {
-  font-family: 'Avenir Next Cyr';
+  font-family: 'Montserrat', Arial, sans-serif;
 }
 
 body {
   height: 100%;
 }
 
+$custom-file-text: (
+  en: "Browse",
+  ru: "Просмотр"
+);
+
 // helpers
+
+.row {
+  &--left {
+    flex-direction: row;
+  }
+
+  &--right {
+    flex-direction: row-reverse;
+  }
+}
+
+a {
+  cursor: pointer;
+}
 
 h1.title-logo {
   font-size: 52px;
@@ -21,6 +40,14 @@ h1.title-label {
   font-size: 64px;
   font-weight: 700;
   color: $a-black;
+
+  &__artist {
+    font-size: 26px;
+    line-height: 1.23;
+    font-size: 800;
+    margin-bottom: 0!important;
+    padding: 0!important;
+  }
 }
 
 h2.title-label {
@@ -40,6 +67,15 @@ h3.title-label {
 span.label-span-text {
   font-size: 24px;
   color: $a-black;
+
+  &__artist {
+    font-size: 21px;
+  }
+
+  &__buy {
+    font-size: 16px;
+    float: initial !important;
+  }
 }
 
 .reist {
@@ -61,6 +97,144 @@ span.label-span-text {
   }
 }
 
+#hellopreloader > p {
+  display: none;
+}
+
+#hellopreloader_preload {
+  display: block;
+  position: fixed;
+  z-index: 99999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  min-width: 1000px;
+  background: #fad9d8 url('../img/logo_prel.png') center center no-repeat;
+  background-size: 50%;
+}
+
+.xs-line {
+  display: block;
+  width: 70px;
+  height: 3px;
+  background-color: #333;
+  margin-bottom: 35px;
+}
+
+.img-artist {
+  img {
+    margin-bottom: 15px;
+  }
+}
+
+.modal-image-tryWall {
+
+}
+
+#rec176276006 .t396__artboard {
+  min-height: calc(100vh - 126px)!important;
+}
+
+#rec174118417 {
+  padding: 38px 0 !important;
+
+  .t452 {
+    width: 100%;
+  }
+}
+
+// canvas
+
+$d: 90vmin;
+$c: #000;
+
+@function stop-list($n: 5) {
+	$s-list: ();
+
+	@for $i from 1 through $n {
+		$j: $n - $i;
+		$s-list: $s-list, rgb($j*24, $j*12, $j*32)
+	}
+
+	@return $s-list;
+}
+
+#c {
+	max-width: $d; max-height: $d;
+	border-radius: .5em;
+	box-shadow: 2px 2px 5px rgba($c, .5);
+	background: radial-gradient(stop-list())
+}
+
+// buttons
+
+.btn {
+
+}
+
+.btn-works {
+  background: $art-color;
+  border-radius: 0;
+  padding: 10px 20px;
+  margin: 0 auto;
+  display: block;
+  max-width: 300px;
+  border: 0;
+
+  &:hover {
+    box-shadow: 0 0 0px 2px rgba($black, .3);
+  }
+}
+
+.btn-buy {
+  background: $b-black;
+  color: $white;
+  border-radius: 0;
+  padding: 10px 30px;
+  max-width: 300px;
+  border: 0;
+  border-radius: 50px;
+  margin: 15px 0;
+
+  &:hover {
+    box-shadow: 0 0 0px 2px rgba($black, .3);
+    background: $black;
+    color: $white;
+  }
+}
+
+.file-upload {
+  position: relative;
+  display: inline-block;
+
+  &__label {
+    display: block;
+    padding: 1em 2em;
+    color: #fff;
+    background: #222;
+    border-radius: .4em;
+    transition: background .3s;
+
+    &:hover {
+      cursor: pointer;
+      background: #000;
+    }
+  }
+
+  &__input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    font-size: 1;
+    width: 0;
+    height: 100%;
+    opacity: 0;
+  }
+}
+
 // label
 
 .label {
@@ -73,19 +247,117 @@ span.label-span-text {
     background-color: $art-color;
     padding: 150px 0;
   }
+
+  &__artists {
+    padding: 75px 0;
+  }
 }
 
 .label-text {
+
+  &.artist-single {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+  }
+
+  span {
+    display: block;
+  }
+
   &__center {
     text-align: center;
   }
 
   &__left {
     text-align: left;
+
+    .label-span-text {
+      float: left;
+    }
+
+    .xs-line {
+      float: left;
+    }
   }
 
   &__right {
-    text-align: right;
+    text-align: left;
+    padding-left: 20px;
+
+    .label-span-text {
+      float: left;
+    }
+
+    .xs-line {
+      float: left;
+    }
+  }
+}
+
+// Artist works
+
+.artist {
+  &__works {
+    width: 100%;
+  }
+}
+
+.modal-image-tryWall {
+  .modal-content, .modal-header, .modal-body, .modal-footer {
+    border: 0;
+    border-radius: 0;
+  }
+
+  .modal-body {
+    height: 70vh;
+
+    .modal-block-move {
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+}
+
+.modal-image-chooseFrame {
+  .modal-content, .modal-header, .modal-body, .modal-footer {
+    border: 0;
+    border-radius: 0;
+  }
+
+  .modal-footer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .modal-body {
+    height: 70vh;
+
+    .modal-block-move {
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+
+  .modal-img {
+    top: 25px;
+  }
+
+  .modal-art-ram {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+
+    .button-pattern {
+      margin: 0 15px;
+    }
   }
 }
 
@@ -175,7 +447,7 @@ span.label-span-text {
   min-height: calc(100vh - 85px);
   padding: 50px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-direction: column;
   background: $art-color;
 
@@ -190,6 +462,7 @@ span.label-span-text {
   list-style: none;
   padding-left: 0;
   z-index: 9;
+  margin: 50px 0;
 
   li {
     padding: 20px 0;
@@ -202,6 +475,7 @@ span.label-span-text {
       padding: 20px 120px;
       transition: .1s;
       text-transform: uppercase;
+      font-family: 'Montserrat';
 
       &:hover {
         color: $art-color;
@@ -220,7 +494,7 @@ span.label-span-text {
     color: $a-black;
     text-decoration: none;
     font-weight: 700;
-    padding: 0 10px;
+    padding: 0 30px;
     text-transform: uppercase;
     transition: .1s;
 

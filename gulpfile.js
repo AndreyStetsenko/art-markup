@@ -46,10 +46,10 @@ var baseDirs = {
 }
 
 var ftp_options = {
-    host: 'gv253770.ftp.ukraine.com.ua',
-    user: 'gv253770_ftp',
-    password: '19r0zk4v',
-    dest: './testmticket.in.ua/new-widget', // dest on ftp server
+    host: '37.140.192.165',
+    user: 'u0833508',
+    password: 'GnO!J_9Q',
+    dest: './art.pandalone.ru/', // dest on ftp server
     parallel: 10,
     log: gutil.log,
 }
